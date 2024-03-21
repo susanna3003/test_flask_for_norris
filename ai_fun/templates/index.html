@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html>
 <body>
-<!-- <link rel="stylesheet" href="style.css"> -->
-
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <h1>Welcome</h1>
 <p>This is where we have landed. Press the button to fly somewhere else.</p>
 
-<button id="goAhead" onclick="openModal()">GO</button>
+<button id="goAhead">GO</button>
 
 <script>
   // Get the button element
   var goAhead = document.getElementById("goAhead");
 
-  // Get the modal element
-  var modal = document.getElementById("user_greet");
-
-  // Get the close button element inside the modal
-  var closeButton = modal.querySelector(".close");
-
-  // Function to open the modal when the button is clicked
+  // Function to redirect to the user_greet route when the button is clicked
   goAhead.addEventListener("click", function() {
-    modal.style.display = "block";
-  });
-
-  // Function to close the modal when the close button is clicked
-  closeButton.addEventListener("click", function() {
-    modal.style.display = "none";
+    window.location.href = "/user_greet";
   });
 </script>
-
 
 </body>
 </html>

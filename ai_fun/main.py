@@ -10,7 +10,7 @@ def index():
 def user_greet():
     import datetime
     current_datetime = datetime.datetime.now()
-    return f"Hello! Current date and time is {current_datetime}!"
+    return render_template("user_greet.html", current_datetime=current_datetime)
   
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=80)
