@@ -6,6 +6,58 @@
 <body>
 <h1>Greetings</h1>
 <p>Hello! Current date and time is {{ current_datetime }}.</p>
+<button id="getForm" onclick="openModal()">Let's get to know you!</button>
+
+<div id="fillForm" class="popup">
+    <form class="popup-content" id="fillForm">
+        <span class="close">&times;</span>
+        <h2>All About You!</h2>
+
+        <!--- name --->
+        <label for="name">Your name: </label>
+        <input type="text" id="name" placeholder="John Smith" required><br>
+
+        <br>
+        <!--- date born --->
+        <label for="dateBorn">Date of birth: </label>
+        <input type="date" id="dateBorn" name="datePicker" required><br>
+
+        <!--- birth place --->
+        <label for="birthPlace">Where were you born? </label>
+        <input type="text" id="birthPlace" required><br>
+
+        <!--- last place --->
+        <label for="lastPlace">What is the last place you went to? </label>
+        <input type="text" id="lastPlace" required><br>
+
+        <!--- fav hobby --->
+        <label for="favHobby">Your favorite hobby: </label>
+        <input type="text" id="favHobby" required><br>
+
+        <br>
+        <button type="submit">Submit</button>
+</div>
+
+<script>
+// Get the button element
+var getForm = document.getElementById("getForm");
+
+// Get the modal element
+var modal = document.getElementById("fillForm");
+
+// Get the close button element inside the modal
+var closeButton = modal.querySelector(".close");
+
+// Function to open the modal when the button is clicked
+getForm.addEventListener("click", function() {
+  modal.style.display = "block";
+});
+
+// Function to close the modal when the close button is clicked
+closeButton.addEventListener("click", function() {
+  modal.style.display = "none";
+});
+</script>
 
 </body>
 </html>

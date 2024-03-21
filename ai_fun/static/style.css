@@ -27,3 +27,16 @@ h1 {
 #goAhead:hover {
   background-color: #5b9372;
 }
+
+#getForm {
+  background-color: #40754c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#getForm:hover {
+  background-color: #5b9372;
+}
