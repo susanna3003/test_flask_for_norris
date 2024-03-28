@@ -5,38 +5,39 @@
 </head>
 <body>
 <h1>Greetings</h1>
-<p>Hello! Current date and time is {{ current_datetime }}.</p>
 <button id="getForm" onclick="openModal()">Let's get to know you!</button>
 
 <div id="fillForm" class="popup">
-    <form class="popup-content" id="fillForm">
+    <!--<form class="popup-content" id="fillForm">-->
+    <form class="popup-content" id="form" action="{{ url_for('user_greet') }}" method="POST">
+    
         <span class="close">&times;</span>
         <h2>All About You!</h2>
 
         <!--- name --->
         <label for="name">Your name: </label>
-        <input type="text" id="name" placeholder="John Smith" required><br>
+        <input type="text" id="name" name="name" placeholder="John Smith" required><br>
 
         <!--- age --->
         <label for="age">Your age: </label>
-        <input type="text" id="age" required><br>
+        <input type="text" id="age" name="age" required><br>
 
         <br>
         <!--- date born --->
         <label for="dateBorn">Date of birth: </label>
-        <input type="date" id="dateBorn" name="datePicker" required><br>
+        <input type="date" id="dateBorn" name="dateBorn" required><br>
 
         <!--- birth place --->
         <label for="birthPlace">Where were you born? </label>
-        <input type="text" id="birthPlace" required><br>
+        <input type="text" id="birthPlace" name="birthPlace" required><br>
 
         <!--- last place --->
         <label for="lastPlace">What is the last place you went to? </label>
-        <input type="text" id="lastPlace" required><br>
+        <input type="text" id="lastPlace" name="lastPlace" required><br>
 
         <!--- fav hobby --->
         <label for="favHobby">Your favorite hobby: </label>
-        <input type="text" id="favHobby" required><br>
+        <input type="text" id="favHobby" name="favHobby" required><br>
 
         <br>
         <button type="submit" id="submitForm">Submit</button>
@@ -66,13 +67,13 @@ closeButton.addEventListener("click", function() {
 var form = document.getElementById("form");
 
 // Add event listener to form submit event
-form.addEventListener("submit", function(event) {
+// form.addEventListener("submit", function(event) {
     // Prevent default form submission
-    event.preventDefault();
+    // event.preventDefault();
     
     // Redirect to "/wanted" route
-    window.location.href = "/wanted";
-});
+    // window.location.href = "/wanted";
+// });
 </script>
 
 </body>

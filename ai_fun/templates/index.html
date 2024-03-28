@@ -5,9 +5,12 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <h1>Welcome</h1>
-<p>This is where we have landed. Press the button to fly somewhere else.</p>
+<p>Current date and time: {{ current_datetime }}</p>  
+    <form action="{{ url_for('user_greet') }}" method="get">  
+        <button type="submit">GO</button>  
+    </form>  
 
-<button id="goAhead">GO</button>
+<!---<button id="goAhead">GO</button>
 
 <script>
   // Get the button element
@@ -17,7 +20,7 @@
   goAhead.addEventListener("click", function() {
     window.location.href = "/user_greet";
   });
-</script>
+</script>--->
 
 </body>
 </html>
